@@ -1,0 +1,135 @@
+
+     <link rel="icon"  href="GPT (1).png">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon"  href="GPT (1).png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 43rd Birthday Baba</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 40px;
+    }
+    .card-container {
+      position: relative;
+      width: 320px;
+      height: 280px;
+      perspective: 1000px;
+    }
+    .card {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: hidden;
+      transition: transform 0.5s, opacity 0.5s;
+    }
+    .card img {
+      width: 100%;
+      height: 60%;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+    }
+    .card p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 15px 10px;
+    }
+    .buttons {
+      position: absolute;
+      bottom: -60px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #ff6f61;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e63946;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy 43rd Birthday Baba 🎉<BR>
+  🎉 -----FROM DHRUBONEEL---- 🎉
+  </h1>
+  
+  <div class="card-container">
+    <div class="card">
+      <img src="GPT (3).png" alt="Birthday Image 1">
+      <p>💖 We Love You Baba 💖</p>
+    </div>
+    <div class="card" style="background:#ffe066;">
+      <img src="GPT (2).png" alt="Birthday Image 2">
+      <p>🌟 Stay Blessed Always 🌟</p>
+    </div>
+    <div class="card" style="background:#9ef01a;">
+      <img src="GPT (1).png" alt="Birthday Image 3">
+      <p>🎂 Enjoy Your Special Day 🎂</p>
+    </div>
+    <div class="card" style="background:#00bbf9;">
+      <img src="GPT (3).png" alt="Birthday Image 4">
+      <p>🎁 You’re the Best 🎁</p>
+    </div>
+    <div class="buttons">
+      <button onclick="prevCard()">⬅ Prev</button>
+      <button onclick="nextCard()">Next ➡</button>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    let current = 0;
+
+    function showCard(index) {
+      cards.forEach((card, i) => {
+        card.style.transform = `translateX(${(i - index) * 100}%)`;
+        card.style.opacity = i === index ? "1" : "0";
+      });
+    }
+
+    function nextCard() {
+      current = (current + 1) % cards.length;
+      showCard(current);
+    }
+
+    function prevCard() {
+      current = (current - 1 + cards.length) % cards.length;
+      showCard(current);
+    }
+
+    showCard(current);
+  </script>
+</body>
+</html>
